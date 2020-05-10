@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ChenYinjie&#39;sBlog</title>
   
-  
+  <subtitle>share all I have</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ghostychen.github.io/"/>
