@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ghostychen.github.io/"/>
-  <updated>2020-05-08T16:36:19.481Z</updated>
+  <updated>2020-05-11T02:42:06.041Z</updated>
   <id>https://ghostychen.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue项目文件目录结构</title>
+    <link href="https://ghostychen.github.io/2020/05/11/article/"/>
+    <id>https://ghostychen.github.io/2020/05/11/article/</id>
+    <published>2020-05-11T02:37:00.000Z</published>
+    <updated>2020-05-11T02:42:06.041Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Node环境安装"><a href="#Node环境安装" class="headerlink" title="Node环境安装"></a>Node环境安装</h2><h3 id="window-mac安装"><a href="#window-mac安装" class="headerlink" title="window/mac安装"></a>window/mac安装</h3><ul><li><a href="http://nodejs.cn/download" target="_blank" rel="noopener">http://nodejs.cn/download</a></li></ul><h2 id="Git安装和配置"><a href="#Git安装和配置" class="headerlink" title="Git安装和配置"></a>Git安装和配置</h2><ul><li><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li>官网：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></li></ul></li><li><h3 id="环境变量配置、开发工具配置"><a href="#环境变量配置、开发工具配置" class="headerlink" title="环境变量配置、开发工具配置"></a>环境变量配置、开发工具配置</h3><ul><li><p>查看设置本地环境变量</p><p>属性 –&gt; 高级 –&gt; 环境变量</p></li><li><p>配置VsCode的Git地址</p></li></ul></li><li><h3 id="存储密码-SSH添加公钥"><a href="#存储密码-SSH添加公钥" class="headerlink" title="存储密码 - SSH添加公钥"></a>存储密码 - SSH添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br><span class="line">git config --global user.name &#39;yourname&#39;</span><br><span class="line">git config --global user.email &#39;youremail@example.com&#39;</span><br><span class="line"></span><br><span class="line">git config --global credential.helper store</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;配置SSH密钥</span><br><span class="line">ssh-keygen -t rsa -C &#39;youremail@example.com&#39;</span><br></pre></td></tr></table></figure></li><li><h3 id="团队使用Git命令开发项目"><a href="#团队使用Git命令开发项目" class="headerlink" title="团队使用Git命令开发项目"></a>团队使用Git命令开发项目</h3></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Node环境安装&quot;&gt;&lt;a href=&quot;#Node环境安装&quot; class=&quot;headerlink&quot; title=&quot;Node环境安装&quot;&gt;&lt;/a&gt;Node环境安装&lt;/h2&gt;&lt;h3 id=&quot;window-mac安装&quot;&gt;&lt;a href=&quot;#window-mac安装&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Vue全家桶高仿小米商城" scheme="https://ghostychen.github.io/categories/Vue%E5%85%A8%E5%AE%B6%E6%A1%B6%E9%AB%98%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%95%86%E5%9F%8E/"/>
+    
+    
+      <category term="Vue" scheme="https://ghostychen.github.io/tags/Vue/"/>
+    
+      <category term="Git" scheme="https://ghostychen.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
