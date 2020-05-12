@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ghostychen.github.io/"/>
-  <updated>2020-05-11T14:37:54.261Z</updated>
+  <updated>2020-05-12T00:26:36.605Z</updated>
   <id>https://ghostychen.github.io/</id>
   
   <author>
@@ -17,53 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>跨域的一些解决方案</title>
-    <link href="https://ghostychen.github.io/2020/05/11/article3/"/>
-    <id>https://ghostychen.github.io/2020/05/11/article3/</id>
-    <published>2020-05-11T14:35:56.000Z</published>
-    <updated>2020-05-11T14:37:54.261Z</updated>
+    <title>Hello World</title>
+    <link href="https://ghostychen.github.io/2020/05/12/hello-world/"/>
+    <id>https://ghostychen.github.io/2020/05/12/hello-world/</id>
+    <published>2020-05-12T00:26:36.605Z</published>
+    <updated>2020-05-12T00:26:36.605Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前端跨域解决方案"><a href="#前端跨域解决方案" class="headerlink" title="前端跨域解决方案"></a>前端跨域解决方案</h1><ol><li><h2 id="什么是前端跨域"><a href="#什么是前端跨域" class="headerlink" title="什么是前端跨域"></a>什么是前端跨域</h2><ul><li><p>跨域是浏览器为了安全做出的限制策略</p></li><li><p>浏览器请求必须遵守同源策略：同域名，同端口，同协议</p></li></ul></li><li><h2 id="怎么解决前端跨域"><a href="#怎么解决前端跨域" class="headerlink" title="怎么解决前端跨域"></a>怎么解决前端跨域</h2><ul><li><h3 id="CORS跨域"><a href="#CORS跨域" class="headerlink" title="CORS跨域"></a>CORS跨域</h3><p>CORS跨域 - 服务端设置，前端直接调用</p><p>说明：后台允许前端某个站点进行访问</p><p>网站Easy Mock</p></li><li><h3 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h3><p>JSONP跨域 - 前端适配，后台配合</p><p>说明：前后台同时改造</p><p>注意：JSONP请求不是真正的请求，在XHR中没有，只是一段JS脚本</p><p>JSONP语法 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let url &#x3D; &quot;https:&#x2F;&#x2F;www.imooc.com&#x2F;common&#x2F;adver-getadver&quot;</span><br><span class="line">    jsonp(url,&#123;&#125;，(err,res)&#x3D;&gt;&#123;</span><br><span class="line">      let result &#x3D; res;</span><br><span class="line">      this.data &#x3D; result;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></li></ul></li></ol><ul><li><h3 id="代理跨域"><a href="#代理跨域" class="headerlink" title="代理跨域"></a>代理跨域</h3><p>接口代理 - 通过修改nginx服务器配置来实现</p><p>说明：前端修改，后台不动</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;前端跨域解决方案&quot;&gt;&lt;a href=&quot;#前端跨域解决方案&quot; class=&quot;headerlink&quot; title=&quot;前端跨域解决方案&quot;&gt;&lt;/a&gt;前端跨域解决方案&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;h2 id=&quot;什么是前端跨域&quot;&gt;&lt;a href=&quot;#什么是前端跨域&quot; clas
-      
-    
-    </summary>
-    
-    
-      <category term="跨域" scheme="https://ghostychen.github.io/categories/%E8%B7%A8%E5%9F%9F/"/>
-    
-    
-      <category term="跨域" scheme="https://ghostychen.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git常用命令速查表</title>
-    <link href="https://ghostychen.github.io/2020/05/11/gitorderarticle/"/>
-    <id>https://ghostychen.github.io/2020/05/11/gitorderarticle/</id>
-    <published>2020-05-11T14:18:43.000Z</published>
-    <updated>2020-05-11T14:22:27.520Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;url&gt;        #克隆远程版本库</span><br><span class="line">$ git init               #初始化本地版本库</span><br></pre></td></tr></table></figure><h2 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status              #查看状态</span><br><span class="line">$ git diff                #查看变更内容</span><br><span class="line">$ git add .               #跟踪所有改动过的文件</span><br><span class="line">$ git add &lt;file&gt;          #跟踪指定的文件</span><br><span class="line">$ git mv &lt;old&gt; &lt;new&gt;      #文件改名</span><br><span class="line">$ git rm &lt;file&gt;           #删除文件</span><br><span class="line">$ git rm --cached &lt;file&gt;              #停止跟踪文件但不删除</span><br><span class="line">$ git commit -m &quot;commit message&quot;      #提交所有更新过的文件</span><br><span class="line">$ git commit --amend                  #修改最后一次提交</span><br></pre></td></tr></table></figure><h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git log               #查看提交历史         </span><br><span class="line">$ git log -p &lt;file&gt;     #查看指定文件的提交历史</span><br><span class="line">$ git blame &lt;file&gt;      #以列表方式查看指定文件的提交历史</span><br></pre></td></tr></table></figure><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --head HEAD         #撤销工作目录中所有未提交文件的修改内容</span><br><span class="line">$ git checkout HEAD &lt;file&gt;      #撤销指定的未提交文件的修改内容</span><br><span class="line">$ git revert &lt;commit&gt;           #撤销指定的提交</span><br></pre></td></tr></table></figure><h2 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git branch                     #显示所有的本地分支</span><br><span class="line">$ git checkout &lt;branch&#x2F;tag&gt;      #切换到指定分支或标签</span><br><span class="line">$ git branch &lt;new-branch&gt;        #创建新分支</span><br><span class="line">$ git branch -d &lt;branch&gt;         #删除本地分支</span><br><span class="line">$ git tag                        #列出所有本地标签</span><br><span class="line">$ git tag &lt;tagname&gt;              #基于最新提交创建标签</span><br><span class="line">$ git tag -d &lt;tagname&gt;           #删除标签</span><br></pre></td></tr></table></figure><h2 id="合并与衍合"><a href="#合并与衍合" class="headerlink" title="合并与衍合"></a>合并与衍合</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git merge &lt;branch&gt;         #合并指定分支到当前分支</span><br><span class="line">$ git rebase &lt;branch&gt;        #衍合指定分支到当前分支</span><br></pre></td></tr></table></figure><h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v                             #查看远程版本库信息</span><br><span class="line">$ git remote show &lt;remote&gt;                  #查看指定远程版本库信息</span><br><span class="line">$ git remote add &lt;remote&gt; &lt;url&gt;             #添加远程版本库</span><br><span class="line">$ git fetch &lt;remote&gt;                        #从远程版本库获取代码</span><br><span class="line">$ git pull &lt;remote&gt; &lt;branch&gt;                #下载代码及快速合并</span><br><span class="line">$ git push &lt;remote&gt; &lt;branch&gt;                #上传代码及快速合并</span><br><span class="line">$ git push &lt;remote&gt; :&lt;branch&#x2F;tag-name&gt;      #删除远程分支或标签</span><br><span class="line">$ git push --tags                           #上传所有标签</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>
     
     
-    
-      <category term="Git" scheme="https://ghostychen.github.io/tags/Git/"/>
     
   </entry>
   
@@ -72,7 +43,7 @@
     <link href="https://ghostychen.github.io/2020/05/11/article/"/>
     <id>https://ghostychen.github.io/2020/05/11/article/</id>
     <published>2020-05-11T02:37:00.000Z</published>
-    <updated>2020-05-11T02:42:06.041Z</updated>
+    <updated>2020-05-12T00:26:36.600Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Node环境安装"><a href="#Node环境安装" class="headerlink" title="Node环境安装"></a>Node环境安装</h2><h3 id="window-mac安装"><a href="#window-mac安装" class="headerlink" title="window/mac安装"></a>window/mac安装</h3><ul><li><a href="http://nodejs.cn/download" target="_blank" rel="noopener">http://nodejs.cn/download</a></li></ul><h2 id="Git安装和配置"><a href="#Git安装和配置" class="headerlink" title="Git安装和配置"></a>Git安装和配置</h2><ul><li><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li>官网：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></li></ul></li><li><h3 id="环境变量配置、开发工具配置"><a href="#环境变量配置、开发工具配置" class="headerlink" title="环境变量配置、开发工具配置"></a>环境变量配置、开发工具配置</h3><ul><li><p>查看设置本地环境变量</p><p>属性 –&gt; 高级 –&gt; 环境变量</p></li><li><p>配置VsCode的Git地址</p></li></ul></li><li><h3 id="存储密码-SSH添加公钥"><a href="#存储密码-SSH添加公钥" class="headerlink" title="存储密码 - SSH添加公钥"></a>存储密码 - SSH添加公钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br><span class="line">git config --global user.name &#39;yourname&#39;</span><br><span class="line">git config --global user.email &#39;youremail@example.com&#39;</span><br><span class="line"></span><br><span class="line">git config --global credential.helper store</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;配置SSH密钥</span><br><span class="line">ssh-keygen -t rsa -C &#39;youremail@example.com&#39;</span><br></pre></td></tr></table></figure></li><li><h3 id="团队使用Git命令开发项目"><a href="#团队使用Git命令开发项目" class="headerlink" title="团队使用Git命令开发项目"></a>团队使用Git命令开发项目</h3></li></ul>]]></content>
     
