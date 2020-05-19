@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git常用命令速查表, ChenYinjie&#39;sBlog">
+    <meta name="keywords" content="阮一峰js教程读书笔记1, ChenYinjie&#39;sBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git常用命令速查表 | ChenYinjie&#39;sBlog</title>
+    <title>阮一峰js教程读书笔记1 | ChenYinjie&#39;sBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git常用命令速查表</h1>
+                    <h1 class="description center-align post-title">阮一峰js教程读书笔记1</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Javascript/">
+                                <span class="chip bg-color">Javascript</span>
                             </a>
                         
                     </div>
@@ -380,8 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                前端学习
+                            <a href="/categories/Js%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                Js读书笔记
                             </a>
                         
                     </div>
@@ -393,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-19
+                    2020-05-20
                 </div>
                 
 
@@ -409,20 +409,106 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git常用命令速查表"><a href="#Git常用命令速查表" class="headerlink" title="Git常用命令速查表"></a>Git常用命令速查表</h1><h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;url&gt;        #克隆远程版本库</span><br><span class="line">$ git init               #初始化本地版本库</span><br></pre></td></tr></table></figure>
+                <h2 id="JavaScript-与-ECMAScript的关系"><a href="#JavaScript-与-ECMAScript的关系" class="headerlink" title="JavaScript 与 ECMAScript的关系"></a>JavaScript 与 ECMAScript的关系</h2><p>ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现。</p>
+<h2 id="大事记"><a href="#大事记" class="headerlink" title="大事记"></a>大事记</h2><p>1999年，IE 5部署了 XMLHttpRequest 接口，允许 JavaScript 发出 HTTP 请求，为后来大行其道的 Ajax 应用创造了条件。</p>
+<p>2001年，Douglas Crockford 提出了 JSON 格式，用于取代 XML 格式，进行服务器和网页之间的数据交换。JavaScript 可以原生支持这种格式，不需要额外部署代码。</p>
+<h2 id="语法注意点"><a href="#语法注意点" class="headerlink" title="语法注意点"></a>语法注意点</h2><ul>
+<li><p>如果使用<code>var</code>重新声明一个已经存在的变量，是无效的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> x;</span><br><span class="line">x <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量提升</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">等同于</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不合法的标识符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>a  <span class="comment">// 第一个字符不能是数字</span></span><br><span class="line"><span class="number">23</span>  <span class="comment">// 同上</span></span><br><span class="line">***  <span class="comment">// 标识符不能包含星号</span></span><br><span class="line">a+b  <span class="comment">// 标识符不能包含加号</span></span><br><span class="line">-d  <span class="comment">// 标识符不能包含减号或连词线</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>switch</code>语句后面的表达式，与<code>case</code>语句后面的表示式比较运行结果时，采用的是严格相等运算符（<code>===</code>），而不是相等运算符（<code>==</code>），这意味着比较时不会发生类型转换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (x) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="literal">true</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'x 发生类型转换'</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'x 没有发生类型转换'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// x 没有发生类型转换</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不管条件是否为真，<code>do...while</code>循环至少运行一次，这是这种结构最大的特点</p>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><p><strong>数值（number）：整数和小数（比如<code>1</code>和<code>3.14</code>）</strong></p>
+</li>
+<li><p><strong>字符串（string）：文本（比如<code>Hello World</code>）。</strong></p>
+</li>
+<li><p><strong>布尔值（boolean）：表示真伪的两个特殊值，即<code>true</code>（真）和<code>false</code>（假）</strong></p>
+</li>
+<li><p><strong><code>undefined</code>：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值。</strong></p>
+</li>
+<li><p><strong><code>null</code>：表示空值，即此处的值为空。</strong></p>
+</li>
+<li><p><strong>对象（object）：各种值组成的集合。</strong></p>
+<ul>
+<li>狭义的对象（object）</li>
+<li>数组（array）</li>
+<li>函数（function）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//typeof 检测值的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">123</span> <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'123'</span> <span class="comment">// "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">false</span> <span class="comment">// "boolean"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">typeof</span> f</span><br><span class="line"><span class="comment">// "function"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span></span><br><span class="line"><span class="comment">// "undefined"</span></span><br><span class="line"></span><br><span class="line">v</span><br><span class="line"><span class="comment">// ReferenceError: v is not defined</span></span><br><span class="line"><span class="keyword">typeof</span> v</span><br><span class="line"><span class="comment">// "undefined"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">window</span> <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// "object"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status              #查看状态</span><br><span class="line">$ git diff                #查看变更内容</span><br><span class="line">$ git add .               #跟踪所有改动过的文件</span><br><span class="line">$ git add &lt;file&gt;          #跟踪指定的文件</span><br><span class="line">$ git mv &lt;old&gt; &lt;new&gt;      #文件改名</span><br><span class="line">$ git rm &lt;file&gt;           #删除文件</span><br><span class="line">$ git rm --cached &lt;file&gt;              #停止跟踪文件但不删除</span><br><span class="line">$ git commit -m &quot;commit message&quot;      #提交所有更新过的文件</span><br><span class="line">$ git commit --amend                  #修改最后一次提交</span><br></pre></td></tr></table></figure>
 
-<h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git log               #查看提交历史         </span><br><span class="line">$ git log -p &lt;file&gt;     #查看指定文件的提交历史</span><br><span class="line">$ git blame &lt;file&gt;      #以列表方式查看指定文件的提交历史</span><br></pre></td></tr></table></figure>
 
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --head HEAD         #撤销工作目录中所有未提交文件的修改内容</span><br><span class="line">$ git checkout HEAD &lt;file&gt;      #撤销指定的未提交文件的修改内容</span><br><span class="line">$ git revert &lt;commit&gt;           #撤销指定的提交</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="comment">// 0</span></span><br><span class="line"><span class="number">5</span> + <span class="literal">null</span> <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="comment">// NaN</span></span><br><span class="line"><span class="number">5</span> + <span class="literal">undefined</span> <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure></code></pre><ul>
+<li><p><code>null</code>表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入<code>null</code>，表示该参数为空。</p>
+</li>
+<li><p><code>undefined</code>表示“未定义”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量声明了，但没有赋值</span></span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line">i <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数时，应该提供的参数没有提供，该参数等于 undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line">f() <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象没有赋值的属性</span></span><br><span class="line"><span class="keyword">var</span>  o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">o.p <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数没有返回值时，默认返回 undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">f() <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git branch                     #显示所有的本地分支</span><br><span class="line">$ git checkout &lt;branch&#x2F;tag&gt;      #切换到指定分支或标签</span><br><span class="line">$ git branch &lt;new-branch&gt;        #创建新分支</span><br><span class="line">$ git branch -d &lt;branch&gt;         #删除本地分支</span><br><span class="line">$ git tag                        #列出所有本地标签</span><br><span class="line">$ git tag &lt;tagname&gt;              #基于最新提交创建标签</span><br><span class="line">$ git tag -d &lt;tagname&gt;           #删除标签</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>布尔值转换规则</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>false</code></li>
+<li><code>0</code></li>
+<li><code>NaN</code></li>
+<li><code>&quot;&quot;</code>或<code>&#39;&#39;</code>（空字符串）</li>
+</ul>
+</li>
+</ul>
+<h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><ul>
+<li><p>所有数字都是64位浮点数形式存储</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> === <span class="number">1.0</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript 语言的底层根本没有整数，所有数字都是小数（64位浮点数）。容易造成混淆的是，某些运算只有整数才能完成，此时 JavaScript 会自动把64位浮点数，转成32位整数，然后再进行运算。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> === <span class="number">0.3</span></span><br><span class="line"><span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">0.3</span> / <span class="number">0.1</span></span><br><span class="line"><span class="comment">// 2.9999999999999996</span></span><br><span class="line"></span><br><span class="line">(<span class="number">0.3</span> - <span class="number">0.2</span>) === (<span class="number">0.2</span> - <span class="number">0.1</span>)</span><br><span class="line"><span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数值精度(浮点数的64个二进制位)</p>
+<ul>
+<li>第1位：符号位，<code>0</code>表示正数，<code>1</code>表示负数</li>
+<li>第2位到第12位（共11位）：指数部分</li>
+<li>第13位到第64位（共52位）：小数部分（即有效数字）</li>
+</ul>
+</li>
+</ul>
+<p>  简单的法则就是，JavaScript 对15位的十进制数都可以精确处理<br>  NaN不是独立的数据类型，数据类型依然是Number。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NaN &#x3D;&#x3D;&#x3D; NaN &#x2F;&#x2F;false </span><br><span class="line">[NaN].indexof(NaN) &#x2F;&#x2F;-1</span><br><span class="line">Boolean(NaN) &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">NaN + 32 &#x2F;&#x2F; NaN</span><br><span class="line">NaN - 32 &#x2F;&#x2F; NaN</span><br><span class="line">NaN * 32 &#x2F;&#x2F; NaN</span><br><span class="line">NaN &#x2F; 32 &#x2F;&#x2F; NaN</span><br></pre></td></tr></table></figure>
 
-<h2 id="合并与衍合"><a href="#合并与衍合" class="headerlink" title="合并与衍合"></a>合并与衍合</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git merge &lt;branch&gt;         #合并指定分支到当前分支</span><br><span class="line">$ git rebase &lt;branch&gt;        #衍合指定分支到当前分支</span><br></pre></td></tr></table></figure>
+<h3 id="Infinity"><a href="#Infinity" class="headerlink" title="Infinity"></a>Infinity</h3><p>  <code>Infinity</code>表示“无穷”，用来表示两种场景。一种是一个正的数值太大，或一个负的数值太小，无法表示；另一种是非0数值除以0，得到<code>Infinity</code>。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">Math.pow(2,1024) &#x2F;&#x2F;Infinity</span><br><span class="line"></span><br><span class="line">0 &#x2F; 0 &#x2F;&#x2F;NaN</span><br><span class="line">1 &#x2F; 0 &#x2F;&#x2F;Infinity</span><br><span class="line"></span><br><span class="line">Infinity &#x3D;&#x3D;&#x3D; -Infinity &#x2F;&#x2F;false</span><br><span class="line"></span><br><span class="line">1 &#x2F; -0 &#x2F;&#x2F;-Infinity</span><br><span class="line">-1 &#x2F; -0 &#x2F;&#x2F;Infinity</span><br><span class="line"></span><br><span class="line">Infinity &gt; 1000 &#x2F;&#x2F;true</span><br><span class="line">-Infinity &lt; -1000 &#x2F;&#x2F;true</span><br><span class="line"></span><br><span class="line">Infinity &gt; NaN &#x2F;&#x2F; false</span><br><span class="line">-Infinity &gt; NaN &#x2F;&#x2F; false</span><br><span class="line">Infinity &lt; NaN &#x2F;&#x2F; false</span><br><span class="line">-Infinity &lt; NaN &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Infinity的四则运算，符合无穷的数学计算规则。</span><br><span class="line">5 * Infinity &#x2F;&#x2F; Infinity</span><br><span class="line">5 - Infinity &#x2F;&#x2F; -Infinity</span><br><span class="line">Infinity &#x2F; 5 &#x2F;&#x2F; Infinity</span><br><span class="line">5 &#x2F; Infinity &#x2F;&#x2F; 0</span><br><span class="line"></span><br><span class="line">0 * Infinity &#x2F;&#x2F; NaN</span><br><span class="line">0 &#x2F; Infinity &#x2F;&#x2F; 0</span><br><span class="line">Infinity &#x2F; 0 &#x2F;&#x2F; Infinity</span><br><span class="line"></span><br><span class="line">Infinity + Infinity &#x2F;&#x2F; Infinity</span><br><span class="line">Infinity * Infinity &#x2F;&#x2F; Infinity</span><br><span class="line"></span><br><span class="line">Infinity - Infinity &#x2F;&#x2F; NaN</span><br><span class="line">Infinity &#x2F; Infinity &#x2F;&#x2F; NaN</span><br><span class="line">Infinity与null计算时，null会转成0，等同于与0的计算。</span><br><span class="line">null * Infinity &#x2F;&#x2F; NaN</span><br><span class="line">null &#x2F; Infinity &#x2F;&#x2F; 0</span><br><span class="line">Infinity &#x2F; null &#x2F;&#x2F; Infinity</span><br><span class="line"></span><br><span class="line">Infinity与undefined计算，返回的都是NaN。</span><br><span class="line">undefined + Infinity &#x2F;&#x2F; NaN</span><br><span class="line">undefined - Infinity &#x2F;&#x2F; NaN</span><br><span class="line">undefined * Infinity &#x2F;&#x2F; NaN</span><br><span class="line">undefined &#x2F; Infinity &#x2F;&#x2F; NaN</span><br><span class="line">Infinity &#x2F; undefined &#x2F;&#x2F; NaN</span><br></pre></td></tr></table></figure>
 
-<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v                             #查看远程版本库信息</span><br><span class="line">$ git remote show &lt;remote&gt;                  #查看指定远程版本库信息</span><br><span class="line">$ git remote add &lt;remote&gt; &lt;url&gt;             #添加远程版本库</span><br><span class="line">$ git fetch &lt;remote&gt;                        #从远程版本库获取代码</span><br><span class="line">$ git pull &lt;remote&gt; &lt;branch&gt;                #下载代码及快速合并</span><br><span class="line">$ git push &lt;remote&gt; &lt;branch&gt;                #上传代码及快速合并</span><br><span class="line">$ git push &lt;remote&gt; :&lt;branch&#x2F;tag-name&gt;      #删除远程分支或标签</span><br><span class="line">$ git push --tags                           #上传所有标签</span><br></pre></td></tr></table></figure>
 
+
+<h2 id="与数值相关的全局方法"><a href="#与数值相关的全局方法" class="headerlink" title="与数值相关的全局方法"></a>与数值相关的全局方法</h2><ul>
+<li><h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><p>如果字符串的第一个字符不能转化为数字（后面跟着数字的正负号除外），返回<code>NaN</code>。</p>
+<p>对于那些会自动转为科学计数法的数字，<code>parseInt</code>会将科学计数法的表示方法视为字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parseInt(1000000000000000000000.5) &#x2F;&#x2F; 1</span><br><span class="line">&#x2F;&#x2F; 等同于</span><br><span class="line">parseInt(&#39;1e+21&#39;) &#x2F;&#x2F; 1</span><br><span class="line"></span><br><span class="line">parseInt(0.0000008) &#x2F;&#x2F; 8</span><br><span class="line">&#x2F;&#x2F; 等同于</span><br><span class="line">parseInt(&#39;8e-7&#39;) &#x2F;&#x2F; 8</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>字符串符合科学计数法，则会进行相应的转换。</p>
+<p><code>parseFloat</code>会将空字符串转为<code>NaN</code>。</p>
+</li>
+<li><h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p><code>isNaN</code>只对数值有效，如果传入其他值，会被先转成数值。</p>
+<p>对于空数组和只有一个数值成员的数组，<code>isNaN</code>返回<code>false</code>,原因是这些数组能被<code>Number</code>函数转成数值。</p>
+</li>
+<li><h3 id="isFinite"><a href="#isFinite" class="headerlink" title="isFinite()"></a>isFinite()</h3><p><code>isFinite</code>方法返回一个布尔值，表示某个值是否为正常的数值。</p>
+<p>除了<code>Infinity</code>、<code>-Infinity</code>、<code>NaN</code>和<code>undefined</code>这几个值会返回<code>false</code>，<code>isFinite</code>对于其他的数值都会返回<code>true</code>。</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -448,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghostychen.github.io/2020/05/19/art2020051902/">https://ghostychen.github.io/2020/05/19/art2020051902/</a>
+                    <a href="https://ghostychen.github.io/2020/05/20/20200520-01/">https://ghostychen.github.io/2020/05/20/20200520-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -486,8 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/Javascript/">
+                                    <span class="chip bg-color">Javascript</span>
                                 </a>
                             
                         </div>
@@ -659,20 +745,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/20/20200520-01/">
+                <a href="/2020/05/20/20200520-02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="阮一峰js教程读书笔记1">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="阮一峰js教程读书笔记2">
                         
-                        <span class="card-title">阮一峰js教程读书笔记1</span>
+                        <span class="card-title">阮一峰js教程读书笔记2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript 与 ECMAScript的关系ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现。
-大事记1999年，IE 5部署了 XMLHttpRequest 接口，允许 JavaSc
+                            对象
+定义：对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
+如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。
+对象的每一个键名又称为“属性”
                         
                     </div>
                     <div class="publish-info">
@@ -709,30 +797,21 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/19/art20200519/">
+                <a href="/2020/05/19/art2020051902/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端跨域解决方案">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Git常用命令速查表">
                         
-                        <span class="card-title">前端跨域解决方案</span>
+                        <span class="card-title">Git常用命令速查表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端跨域解决方案
-什么是前端跨域
-跨域是浏览器为了安全做出的限制策略
+                            Git常用命令速查表创建版本库12$ git clone &lt;url&gt;        #克隆远程版本库$ git init               #初始化本地版本库
 
-浏览器请求必须遵守同源策略：同域名，同端口，同协议
-
-
-
-怎么解决前端跨域
-CORS跨域CORS跨域 - 服务端设置，前端直接调用
-说明：后台允许前端某个站点进行访问
-
+修改和提交123456789$ git status  
                         
                     </div>
                     <div class="publish-info">
@@ -754,8 +833,8 @@ CORS跨域CORS跨域 - 服务端设置，前端直接调用
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B7%A8%E5%9F%9F/">
-                        <span class="chip bg-color">跨域</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
