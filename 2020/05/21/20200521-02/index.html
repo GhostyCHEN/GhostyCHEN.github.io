@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="图解http读书笔记1, ChenYinjie&#39;sBlog">
+    <meta name="keywords" content="图解http读书笔记2, ChenYinjie&#39;sBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>图解http读书笔记1 | ChenYinjie&#39;sBlog</title>
+    <title>图解http读书笔记2 | ChenYinjie&#39;sBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">图解http读书笔记1</h1>
+                    <h1 class="description center-align post-title">图解http读书笔记2</h1>
                 </div>
             </div>
         </div>
@@ -397,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-05-21
                 </div>
                 
 
@@ -413,105 +413,203 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章：了解Web及网络基础"><a href="#第一章：了解Web及网络基础" class="headerlink" title="第一章：了解Web及网络基础"></a>第一章：了解Web及网络基础</h2><p>HTTP<code>（HyperText Transfer Protocol）</code>超文本传输协议。</p>
-<h3 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h3><p>协议：各类电子设备和软件系统通过有线网络设备或无线网络设备连接，必须在统一的规则（工业标准）下才可以协调工作。</p>
-<p>传输控制协议：<code>transmission control protocol</code>  网络连接协议：<code>internet protocol</code></p>
-<p>TCP/IP协议族按层次分为以下四层：应用层，传输层，网络层和数据链路层。</p>
+                <h2 id="第四章：返回结果的HTTP状态码"><a href="#第四章：返回结果的HTTP状态码" class="headerlink" title="第四章：返回结果的HTTP状态码"></a>第四章：返回结果的HTTP状态码</h2><p>状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。</p>
+<p>状态码由3位数字和原因短语组成。</p>
+<h3 id="状态码类别"><a href="#状态码类别" class="headerlink" title="状态码类别"></a>状态码类别</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th align="left">原因短语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1XX</td>
+<td>信息性状态码</td>
+<td align="left">接受的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>成功状态码</td>
+<td align="left">请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>重定向状态码</td>
+<td align="left">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>客户端错误状态码</td>
+<td align="left">服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>服务器端错误状态码</td>
+<td align="left">服务器处理请求出错</td>
+</tr>
+</tbody></table>
+<p>只要遵循状态码类别，服务器端自行创建状态码是可行的。</p>
+<h3 id="14种代表性状态码"><a href="#14种代表性状态码" class="headerlink" title="14种代表性状态码"></a>14种代表性状态码</h3><ul>
+<li><p>200 OK</p>
+<p>表示从客户端发来的请求在服务器端被正常处理。</p>
+</li>
+<li><p>204 No Content</p>
+<p>表示服务器接收的请求已成功处理，但返回的响应报文中不含实体的主体部分，也不允许返回任何实体的主体，浏览器的页面不发生更新。</p>
+</li>
+<li><p>206 Partial Content</p>
+<p>客户端进行了范围请求，服务器成功执行了这部分的GET请求。</p>
+<hr>
+</li>
+<li><p>301 Moved Permanently</p>
+<p>永久性重定向，表示请求的资源已被分配了新的URI，以后应使用资源现在所指的URI。</p>
+</li>
+<li><p>302 Found</p>
+<p>临时性重定向，表示请求的资源已被分配了新的URI，希望用户（本次）能使用新的URI访问。</p>
+</li>
+<li><p>303 See Other</p>
+<p>表示由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源。</p>
+</li>
+<li><p>304 Not Modified</p>
+<p>服务器资源未改变，可直接使用客户端未过期的缓存。</p>
+</li>
+<li><p>307 Temporary Redirect</p>
+<p>临时重定向，不同于302，不会把POST变成GET。</p>
+<hr>
+</li>
+<li><p>400 Bad Request</p>
+<p>表示请求报文存在语法错误，当错误发送时，需修改请求的内容再次发送请求。</p>
+</li>
+<li><p>401 Unauthorized</p>
+<p>表示发送的请求需要有通过HTTP认证的认证信息，另外若之前已进行过一次请求，则表示用户认证失败。</p>
+</li>
+<li><p>403 Forbidden</p>
+<p>表明对请求资源的访问被服务器拒绝了，可在实体的主体部分对拒绝原因进行描述。</p>
+</li>
+<li><p>404 Not Found</p>
+<p>表明服务器上无法找到请求的资源，或服务器拒绝请求切不想说明原因。</p>
+<hr>
+</li>
+<li><p>500 Internal Server Error</p>
+<p>表明服务器端在执行请求时发生错误，也有可能是Web应用存在的bug或某些临时的故障。</p>
+</li>
+<li><p>503 Service Unavailable</p>
+<p>服务器暂时处于超负载或正在进行停机维护，无法处理请求。</p>
+</li>
+</ul>
+<h2 id="第五章：与HTTP协作的Web服务器"><a href="#第五章：与HTTP协作的Web服务器" class="headerlink" title="第五章：与HTTP协作的Web服务器"></a>第五章：与HTTP协作的Web服务器</h2><h3 id="用单台虚拟主机实现多个域名"><a href="#用单台虚拟主机实现多个域名" class="headerlink" title="用单台虚拟主机实现多个域名"></a>用单台虚拟主机实现多个域名</h3><p>在相同IP地址下，由于虚拟主机可以寄存多个不同主机名和域名的Web网站，因此在发送HTTP请求时，必须在Host首部内完整指定主机名或域名的URI。</p>
+<h3 id="通信数据转发程序：代理，网关，隧道"><a href="#通信数据转发程序：代理，网关，隧道" class="headerlink" title="通信数据转发程序：代理，网关，隧道"></a>通信数据转发程序：代理，网关，隧道</h3><ul>
+<li><p>代理</p>
+<p>接收由客户端发送的请求并转发给服务器，同时也接收服务器返回的响应并转发给客户端。转发时，需要附加Via首部字段以标记出经过的主机信息。</p>
+<p>目的：利用缓存技术减少网络带宽的流量，组织内部针对特定网站的访问控制，获取访问日志。</p>
 <ul>
-<li><p>应用层：决定了向用户提供应用服务时通信的活动</p>
-<p>FTP协议：文件传输协议</p>
-<p>HTTP协议</p>
-<p>DNS：域名系统</p>
+<li><p>缓存代理</p>
+<p>预先把资源的副本（缓存）保存在代理服务器上，当代理再次接收到相同资源的请求就可以直接使用代理服务器上的资源作为响应返回。</p>
 </li>
-<li><p>传输层：对上层应用层，提供处于网络连接中两台计算机之间的数据传输</p>
-<p>TCP：传输控制协议</p>
-<p>UDP：用户数据报协议</p>
-</li>
-<li><p>网络层：处理网络上流动的数据包，规定了传输路线</p>
-</li>
-<li><p>链路层：用来处理连接网络的硬件部分</p>
+<li><p>透明代理</p>
+<p>不对报文做任何加工的代理类型，反之为非透明代理。</p>
 </li>
 </ul>
-<h3 id="IP，TCP和DNS"><a href="#IP，TCP和DNS" class="headerlink" title="IP，TCP和DNS"></a>IP，TCP和DNS</h3><ul>
-<li><p>IP位于网络层，作用是把各种数据包传送给对方，需要满足IP地址（可能多个）和MAC地址（地理位置唯一性）才能确保传送到。IP和MAC是多对一的关系</p>
 </li>
-<li><p>TCP位于传输层，提供可靠的字节流服务（把大块数据分割成以报文段为单位的数据包进行管理和准确可靠的传给对方）</p>
-<p>TCP协议的三次握手策略：发送端首先发送一个带SYN标志的数据包给对方。接收端收到后，回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，代表“握手”结束。若某个阶段中断，会再次以相同的顺序发送相同的数据包。</p>
+<li><p>网关</p>
+<p>与代理相似，而网关能使通信线路上的服务器提供非HTTP协议服务。</p>
+<p>比如：网关可连接数据库，使用SQL语句查询数据。</p>
 </li>
-<li><p>DNS<code>Domain Name System</code>服务是应用层协议，提供域名到IP地址之间的解析服务。</p>
-<p>ARP<code>Address resolution Protocol</code>解析地址协议，根据通信方的IP地址反查对应的MAC地址。</p>
-</li>
-</ul>
-<h3 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h3><p>URI用字符串标识某一互联网资源，而URL表示资源的地址（互联网上所处的位置）。URL是URI的子集。</p>
-<h2 id="第二章：简单的HTTP协议"><a href="#第二章：简单的HTTP协议" class="headerlink" title="第二章：简单的HTTP协议"></a>第二章：简单的HTTP协议</h2><p>请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一端称为服务器端。</p>
-<p>HTTP协议规定：请求从客户端发出，最后服务器端响应请求并返回。</p>
-<h3 id="客户端和服务器端通信"><a href="#客户端和服务器端通信" class="headerlink" title="客户端和服务器端通信"></a>客户端和服务器端通信</h3><ul>
-<li><p>客户端发送请求报文：</p>
-<p>请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和内容实体构成。</p>
-</li>
-<li><p>服务器发送响应报文：</p>
-<p>响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。</p>
+<li><p>隧道</p>
+<p>建立一条与其他服务器的通信线路，目的是确保客户端能与服务器进行安全的通信。隧道本身不会解析HTTP请求。通过隧道的传输，可以和远距离的服务器安全通信。</p>
 </li>
 </ul>
-<h3 id="HTTP是无状态stateless协议"><a href="#HTTP是无状态stateless协议" class="headerlink" title="HTTP是无状态stateless协议"></a>HTTP是无状态<code>stateless</code>协议</h3><p>HTTP协议自身不对请求和响应之间的通信状态进行保存。所以需要通过设置<code>cookie</code>来验证状态，比如<code>session</code>。为了更快的处理大量事务，确保协议的可伸缩性。如果对服务器本身发起请求，可以用一个<code>*</code>来代替请求URI</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
+<h3 id="保存资源的缓存"><a href="#保存资源的缓存" class="headerlink" title="保存资源的缓存"></a>保存资源的缓存</h3><p>缓存是指代理服务器或者客户端本地磁盘内保存的资源副本，利用缓存可减少对源服务器的访问，节省通信流量和通信时间。</p>
+<p>缓存的有效期限需要向源服务器确认资源的有效性，若缓存失效，缓存服务器会再次从源服务器上获取“新”资源。</p>
+<h2 id="第六章：HTTP头部"><a href="#第六章：HTTP头部" class="headerlink" title="第六章：HTTP头部"></a>第六章：HTTP头部</h2><h3 id="HTTP报文首部"><a href="#HTTP报文首部" class="headerlink" title="HTTP报文首部"></a>HTTP报文首部</h3><p>报文首部内容为客户端和服务器分别处理请求和响应提供所需要的信息，大部分内容客户端用户无需查看。</p>
+<p>报文主体为用户和资源的信息。</p>
+<ul>
+<li><p>HTTP请求报文</p>
+<p>方法，URI，HTTP版本，HTTP首部字段等构成。</p>
+</li>
+<li><p>HTTP响应报文</p>
+<p>HTTP版本，状态码（数字和原因短语），HTTP首部字段3部分构成。</p>
+</li>
+</ul>
+<h3 id="HTTP首部字段"><a href="#HTTP首部字段" class="headerlink" title="HTTP首部字段"></a>HTTP首部字段</h3><p>使用首部字段是为了给浏览器和服务器提供报文主体大小，所使用的语言，认证信息等内容。</p>
+<h4 id="首部字段结构"><a href="#首部字段结构" class="headerlink" title="首部字段结构"></a>首部字段结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首部字段名：字段值</span><br><span class="line">Content-Type:text&#x2F;html</span><br><span class="line">Keep-Alive:timeout&#x3D;15,max&#x3D;100</span><br></pre></td></tr></table></figure>
 
-<h3 id="告知服务器意图的HTTP方法"><a href="#告知服务器意图的HTTP方法" class="headerlink" title="告知服务器意图的HTTP方法"></a>告知服务器意图的HTTP方法</h3><ul>
-<li><p>GET：获取资源</p>
-<p>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。</p>
-</li>
-<li><p>POST：传输实体主体</p>
-</li>
-<li><p>PUT：传输文件</p>
-</li>
-<li><p>HEAD：获得报文首部</p>
-<p>HEAD与GET方法一样，只是不返回报文主体部分。</p>
-</li>
-<li><p>DELETE：删除文件</p>
-</li>
-<li><p>OPTIONS：询问支持的方法</p>
-<p>OPTIONS方法用来查询针对请求URI指定的资源支持的方法。</p>
-</li>
-<li><p>TRACE：追踪路径</p>
-</li>
-<li><p>CONNECT：要求用隧道协议连接代理</p>
-</li>
+<h4 id="4种HTTP首部字段类型"><a href="#4种HTTP首部字段类型" class="headerlink" title="4种HTTP首部字段类型"></a>4种HTTP首部字段类型</h4><ul>
+<li>通用首部字段</li>
+<li>请求首部字段</li>
+<li>响应首部字段</li>
+<li>实体首部字段</li>
 </ul>
-<h3 id="持节连接节省通信量"><a href="#持节连接节省通信量" class="headerlink" title="持节连接节省通信量"></a>持节连接节省通信量</h3><p>持节连接特点：只要任意一端没有明确提出断开连接，则保持TCP连接状态。</p>
-<p>管线化：不需等待，同时发送多个请求。</p>
-<h3 id="使用Cookie的状态管理"><a href="#使用Cookie的状态管理" class="headerlink" title="使用Cookie的状态管理"></a>使用Cookie的状态管理</h3><p><code>Cookie会根据从服务器端发送的响应报文内的一个叫Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。</code></p>
-<p>Cookie是保存在客户端的，Cookie的内容可以是任意文本。但实际使用中并不直接在Cookie中包含信息，只是包含一个ID，配合服务端的session，以该ID为key获取用户信息。</p>
-<h2 id="第三章：HTTP报文内的HTTP信息"><a href="#第三章：HTTP报文内的HTTP信息" class="headerlink" title="第三章：HTTP报文内的HTTP信息"></a>第三章：HTTP报文内的HTTP信息</h2><h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>HTTP报文大致分为报文首部和报文主体两块。两者由空行（CR+LF）来划分，通常不需要有报文主体。</p>
-<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><ul>
-<li><p>请求报文</p>
-<p>请求行（请求方法，请求URI，HTTP版本）</p>
-<p>请求首部字段</p>
-<p>通用首部字段</p>
-<p>实体首部字段</p>
-<p>其他</p>
-</li>
-<li><p>响应报文</p>
-<p>状态行（状态码，原因短语和HTTP版本）</p>
-<p>响应首部字段</p>
-<p>通用首部字段</p>
-<p>实体首部字段</p>
-<p>其他</p>
-</li>
+<p>RFC2616定义的46种外，还有Cookie，Set-Cookie和Content-Disposition等。</p>
+<h4 id="定义成缓存代理和非缓存代理"><a href="#定义成缓存代理和非缓存代理" class="headerlink" title="定义成缓存代理和非缓存代理"></a>定义成缓存代理和非缓存代理</h4><ul>
+<li>端到端首部（End-to-end Header）</li>
+<li>逐跳首部（Hop-by-hop Header）</li>
 </ul>
-<h3 id="编码提升传输速率"><a href="#编码提升传输速率" class="headerlink" title="编码提升传输速率"></a>编码提升传输速率</h3><ul>
-<li>压缩传输的内容编码</li>
-<li>分割发送的分块传输编码</li>
-</ul>
-<h3 id="发送多种数据的多部分对象集合"><a href="#发送多种数据的多部分对象集合" class="headerlink" title="发送多种数据的多部分对象集合"></a>发送多种数据的多部分对象集合</h3><p>HTTP协议采纳多部分对象集合，发送的一份报文主体内可包含多类型实体。通常在图片或文本文件等上传时使用。需要在首部字段加Content-type。</p>
-<h3 id="获取部分内容的范围请求"><a href="#获取部分内容的范围请求" class="headerlink" title="获取部分内容的范围请求"></a>获取部分内容的范围请求</h3><p>情景：恢复从之前下载中断处恢复下载。</p>
-<p>指定下载的实体范围，指定范围发送的请求叫做范围请求。首部字段Range来指定资源的byte范围。如果服务器端无法响应范围请求，则会返回状态码200 OK和完整的实体内容。</p>
-<h3 id="内容协商返回最合适的内容"><a href="#内容协商返回最合适的内容" class="headerlink" title="内容协商返回最合适的内容"></a>内容协商返回最合适的内容</h3><p>内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言，字符集，编码方式等作为判断的基准。</p>
-<p>内容协商技术有三种类型</p>
+<h4 id="响应首部字段"><a href="#响应首部字段" class="headerlink" title="响应首部字段"></a>响应首部字段</h4><p>ETag：能告知客户端实体标识，是一种可将资源以字符串形式做唯一性标识的方式。服务器会为每份资源分配对应的ETag值。</p>
 <ul>
-<li>服务器驱动协商</li>
-<li>客户端驱动协商</li>
-<li>透明协商</li>
+<li>强ETag：无论实体发生多么细微的变化都会改变值。</li>
+<li>弱ETag：只有资源发生了根本改变，产生差异时才会改变ETag值。</li>
 </ul>
+<p>Vary：对缓存进行控制，相当于一个供有效缓存所在地所使用的自检器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vary: Accept-Language</span><br></pre></td></tr></table></figure>
+
+<p>当代理服务器接收到带有Vary首部字段指定获取资源的请求时，如果使用的<code>Accept-Language</code>字段的值相同，那么就直接从缓存返回响应。反之，则需要先从源服务器端获取资源后才能作为响应返回。</p>
+<h3 id="为Cookie服务的首部字段"><a href="#为Cookie服务的首部字段" class="headerlink" title="为Cookie服务的首部字段"></a>为Cookie服务的首部字段</h3><p>Cookie的工作机制是用户识别及状态管理；</p>
+<ul>
+<li><p>Set-Cookie：响应首部字段，开始状态管理所使用的Cookie信息。</p>
+<p>HttpOnly属性：使JavaScript脚本无法获得Cookie，主要目的是防止跨站脚本攻击（XSS）对Cookie的信息窃取。</p>
+</li>
+<li><p>Cookie：当客户端想获得HTTP状态管理支持时，就会在请求中包含从服务器接收到的Cookie。接收多个Cookie时，同样可以以多个Cookie形式发送。</p>
+</li>
+</ul>
+<h3 id="其他首部字段"><a href="#其他首部字段" class="headerlink" title="其他首部字段"></a>其他首部字段</h3><p>HTTP首部字段是可以自行扩展的。</p>
+<ul>
+<li><p>X-Frame-Options</p>
+<p>主要目的是为了防止点击劫持攻击。</p>
+</li>
+<li><p>X-XSS-Protection</p>
+<p>针对跨站脚本攻击（XSS）的一种对策，用于控制浏览器XSS防护机制的开关。</p>
+</li>
+<li><p>DNT</p>
+<p>Do Not Track，表示拒绝被精准广告追踪的一种方法。</p>
+</li>
+<li><p>P3P</p>
+<p>在线隐私偏好平台技术，可以让Web网站上的个人隐私变成一种仅供程序可理解的形式，以达到保护用户隐私的目的。</p>
+</li>
+</ul>
+<h2 id="第七章：确保Web安全的HTTPS"><a href="#第七章：确保Web安全的HTTPS" class="headerlink" title="第七章：确保Web安全的HTTPS"></a>第七章：确保Web安全的HTTPS</h2><h3 id="HTTP的缺点（内容保密性，身份验证，内容完整性）"><a href="#HTTP的缺点（内容保密性，身份验证，内容完整性）" class="headerlink" title="HTTP的缺点（内容保密性，身份验证，内容完整性）"></a>HTTP的缺点（内容保密性，身份验证，内容完整性）</h3><ul>
+<li>通信使用明文（不加密），内容可能会被窃听。</li>
+<li>不验证通信方身份，有可能遭遇伪装。</li>
+<li>无法证明报文的完整性，有可能已遭篡改。</li>
+</ul>
+<hr>
+<p>TCP/IP是各个环节都可能被窃听的网络，因此需要加密处理来防止被窃听。</p>
+<ul>
+<li>通信加密：通过SSL（Secure Socket Layer 安全套接层）或TLS（Transport Layer Security安全传输层协议）的组合使用，加密HTTP的通信内容。与SSL组合使用的HTTP被称为HTTPS（HTTP Secure，超文本传输安全协议）或HTTP over SSL。</li>
+<li>内容加密：对HTTP报文主体进行加密，前提是要求客户端和服务器同时具备加密和解密机制。</li>
+</ul>
+<h4 id="不确认通信方，存在的安全隐患"><a href="#不确认通信方，存在的安全隐患" class="headerlink" title="不确认通信方，存在的安全隐患"></a>不确认通信方，存在的安全隐患</h4><ul>
+<li>无法确定请求发送至目标的Web服务器是否是按真实意图返回响应的那台服务器。</li>
+<li>无法确定响应返回到的客户端是否是按真实意图接收响应的那个客户端。</li>
+<li>无法确定正在通信的对方是否具有访问权限。</li>
+<li>无法判定请求是来自哪里。</li>
+<li>无意义的请求也会响应（DoS攻击，拒绝服务攻击）</li>
+</ul>
+<h4 id="无法证明报文完整性"><a href="#无法证明报文完整性" class="headerlink" title="无法证明报文完整性"></a>无法证明报文完整性</h4><p>没有任何办法确认，发出请求/响应和接收到的请求/响应是前后相同的。</p>
+<p>请求或响应在传输途中，遭攻击者拦截并篡改内容的攻击称为中间人攻击。（比如写信）</p>
+<h3 id="HTTP-加密-认证-完整性保护-HTTPS"><a href="#HTTP-加密-认证-完整性保护-HTTPS" class="headerlink" title="HTTP+加密+认证+完整性保护 = HTTPS"></a>HTTP+加密+认证+完整性保护 = HTTPS</h3><p>SSL是独立于HTTP的协议，不光是HTTP协议，其他运行在应用层的SMTP和Telnet等协议均可配合SSL协议使用。HTTPS就是身披SSL协议外壳的HTTP。</p>
+<h4 id="公开密钥加密技术"><a href="#公开密钥加密技术" class="headerlink" title="公开密钥加密技术"></a>公开密钥加密技术</h4><p>加密和解密同用一个密钥的方式称为共享密钥加密，也被叫做对称密钥加密。</p>
+<p>使用两把密钥的公开密钥加密：发送密文一方使用对方的公开密钥进行加密处理，对方收到被加密的信息后再使用自己的私有密钥进行解密。</p>
+<p>HTTPS采用共享密钥加密和公开密钥加密两者并用的混合加密机制。使用公开密钥方式交换共享密钥，之后使用共享密钥加密方式进行通信。</p>
+<p>问题：无法证明公开密钥本身就是货真价实的公开密钥——数字认证机构（CA）和相关机构颁发的公开密钥证书。</p>
+<h4 id="HTTPS的安全通信机制"><a href="#HTTPS的安全通信机制" class="headerlink" title="HTTPS的安全通信机制"></a>HTTPS的安全通信机制</h4><ol>
+<li>选择加密算法和相应组件</li>
+<li>传输加密公钥</li>
+<li>建立SSL通道</li>
+<li>传输HTTP报文</li>
+</ol>
+<p>协商加密方式，服务器下发证书，客户端检验证书，交换通信密钥，HTTP业务通讯。</p>
+<p>SSL导致处理速度变慢，分为通信慢和消耗大量CPU及内存资源导致的处理速度变慢-变慢2到100倍。</p>
 
             </div>
             <hr/>
@@ -537,7 +635,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghostychen.github.io/2020/05/20/20200520-01-1/">https://ghostychen.github.io/2020/05/20/20200520-01-1/</a>
+                    <a href="https://ghostychen.github.io/2020/05/21/20200521-02/">https://ghostychen.github.io/2020/05/21/20200521-02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,37 +850,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/21/20200521-02/">
+                <a href="/2020/05/21/20200521-03/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="图解http读书笔记2">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="图解http读书笔记3">
                         
-                        <span class="card-title">图解http读书笔记2</span>
+                        <span class="card-title">图解http读书笔记3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第四章：返回结果的HTTP状态码状态码的职责是当客户端向服务器端发送请求时，描述返回的请求结果。
-状态码由3位数字和原因短语组成。
-状态码类别
+                            第八章：用户身份的认证用户认证
+密码
+动态令牌
+数字证书
+生物认证
+IC卡等
 
-
-
-类别
-原因短语
-
-
-
-1XX
-信息性状态码
-接受的请求正在处理
-
-
-2XX
-成功状态码
-请
+BASIC认证DIGEST认证SSL客户端认证FormBase认证目前认证多半是基于表单认证，客户端会向服务器上的Web应用程序发送登录信息，按登陆信息的验证结
                         
                     </div>
                     <div class="publish-info">
@@ -823,22 +910,20 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/20/20200520-02/">
+                <a href="/2020/05/20/20200520-01-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="阮一峰js教程读书笔记2">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="图解http读书笔记1">
                         
-                        <span class="card-title">阮一峰js教程读书笔记2</span>
+                        <span class="card-title">图解http读书笔记1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对象
-定义：对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
-如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。
-对象的每一个键名又称为“属性”
+                            第一章：了解Web及网络基础HTTP（HyperText Transfer Protocol）超文本传输协议。
+TCP/IP协议族协议：各类电子设备和软件系统通过有线网络设备或无线网络设备连接，必须在统一的规则（工业标准）下才可以协调工作。
                         
                     </div>
                     <div class="publish-info">
@@ -849,8 +934,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Js%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    Js读书笔记
+                            <a href="/categories/http%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    http读书笔记
                                 </a>
                             
                             
@@ -860,8 +945,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
                     <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">

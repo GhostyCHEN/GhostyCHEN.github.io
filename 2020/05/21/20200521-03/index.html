@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="图解http读书笔记1, ChenYinjie&#39;sBlog">
+    <meta name="keywords" content="图解http读书笔记3, ChenYinjie&#39;sBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>图解http读书笔记1 | ChenYinjie&#39;sBlog</title>
+    <title>图解http读书笔记3 | ChenYinjie&#39;sBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">图解http读书笔记1</h1>
+                    <h1 class="description center-align post-title">图解http读书笔记3</h1>
                 </div>
             </div>
         </div>
@@ -397,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-05-21
                 </div>
                 
 
@@ -413,105 +413,87 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章：了解Web及网络基础"><a href="#第一章：了解Web及网络基础" class="headerlink" title="第一章：了解Web及网络基础"></a>第一章：了解Web及网络基础</h2><p>HTTP<code>（HyperText Transfer Protocol）</code>超文本传输协议。</p>
-<h3 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h3><p>协议：各类电子设备和软件系统通过有线网络设备或无线网络设备连接，必须在统一的规则（工业标准）下才可以协调工作。</p>
-<p>传输控制协议：<code>transmission control protocol</code>  网络连接协议：<code>internet protocol</code></p>
-<p>TCP/IP协议族按层次分为以下四层：应用层，传输层，网络层和数据链路层。</p>
+                <h2 id="第八章：用户身份的认证"><a href="#第八章：用户身份的认证" class="headerlink" title="第八章：用户身份的认证"></a>第八章：用户身份的认证</h2><h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><ul>
+<li>密码</li>
+<li>动态令牌</li>
+<li>数字证书</li>
+<li>生物认证</li>
+<li>IC卡等</li>
+</ul>
+<h3 id="BASIC认证"><a href="#BASIC认证" class="headerlink" title="BASIC认证"></a>BASIC认证</h3><h3 id="DIGEST认证"><a href="#DIGEST认证" class="headerlink" title="DIGEST认证"></a>DIGEST认证</h3><h3 id="SSL客户端认证"><a href="#SSL客户端认证" class="headerlink" title="SSL客户端认证"></a>SSL客户端认证</h3><h3 id="FormBase认证"><a href="#FormBase认证" class="headerlink" title="FormBase认证"></a>FormBase认证</h3><p>目前认证多半是基于表单认证，客户端会向服务器上的Web应用程序发送登录信息，按登陆信息的验证结果认证。</p>
+<h4 id="Session（会话）管理及Cookie应用"><a href="#Session（会话）管理及Cookie应用" class="headerlink" title="Session（会话）管理及Cookie应用"></a>Session（会话）管理及Cookie应用</h4><p>使用Cookie管理Session，弥补HTTP协议中不存在的状态管理功能。</p>
+<ol>
+<li>客户端把用户ID和密码等登录信息放入报文实体部分，通常是用<strong>POST</strong>方法把请求发送给服务器，会使用HTTPS通信来进行HTML表单画面的显示和用户输入数据的发送。</li>
+<li>服务器会发放识别用户的Session ID（想象成一种用来区分不同用户的等位符）。通过验证从客户端发送过来的登陆信息进行身份认证，然后把用户的认证状态与Session ID绑定记录着服务器端。</li>
+<li>客户端接收到从服务器端发来的Session ID，作为Cookie保存在本地，下次发送请求时，浏览器会自动发送Cookie，服务器识别用户和认证状态。</li>
+</ol>
+<p>安全保存用户密码的方式是给密码加盐<code>salt</code>的方式增加额外信息，再使用散列函数计算散列值后保存。</p>
+<p><code>salt</code>是服务器随机生成一个足够长的字符串，然后和密码字符串相连接生成散列值，当两个用户使用同一密码，但<code>salt</code>不同，对应的散列值也不同，减少了密码特征，增强安全性。</p>
+<h2 id="第九章：基于HTTP的功能追加协议"><a href="#第九章：基于HTTP的功能追加协议" class="headerlink" title="第九章：基于HTTP的功能追加协议"></a>第九章：基于HTTP的功能追加协议</h2><h3 id="HTTP的瓶颈"><a href="#HTTP的瓶颈" class="headerlink" title="HTTP的瓶颈"></a>HTTP的瓶颈</h3><ul>
+<li>一条连接上只可发送一个请求。</li>
+<li>请求只能从客户端开始，客户端不可以接收除响应外的指令。</li>
+<li>请求/响应首部未经压缩就发送。首部信息越多延迟越大。</li>
+<li>发送冗余的首部。每次互相发送相同的首部造成的浪费多。</li>
+<li>可任意选择数据压缩格式。非强制压缩发送。</li>
+</ul>
+<h4 id="Ajax的解决方法（异步JavaScript与XML技术）"><a href="#Ajax的解决方法（异步JavaScript与XML技术）" class="headerlink" title="Ajax的解决方法（异步JavaScript与XML技术）"></a>Ajax的解决方法（异步JavaScript与XML技术）</h4><p>有效利用JavaScript和DOM的操作，以达到局部Web页面替换加载的异步通信手段。</p>
+<p>Ajax的核心技术是<code>XMLHttpRequest</code>的API，通过JavaScript脚本语言的调用就能和服务器进行HTTP通信。通过这种手段，就能从已加载完毕的Web页面上发起请求，只更新局部页面。</p>
+<h4 id="Comet的解决方法"><a href="#Comet的解决方法" class="headerlink" title="Comet的解决方法"></a>Comet的解决方法</h4><p>通常，服务器接收请求会立即返回响应，但Comet会先将 响应置于挂起状态，当服务器有内容更新时，再返回响应。</p>
+<h4 id="SPDY的设计和功能（已放弃–-gt-HTTP2）"><a href="#SPDY的设计和功能（已放弃–-gt-HTTP2）" class="headerlink" title="SPDY的设计和功能（已放弃–&gt;HTTP2）"></a>SPDY的设计和功能（已放弃–&gt;HTTP2）</h4><p>SPDY没有改写HTTP协议，而是在应用层和传输层之间通过新加会话层的形式运作，同时规定通信中使用SSL（表示层）。</p>
+<p>SPDY控制数据的流动，还是采用HTTP建立通信连接。可照常使用HTTP的GET和POST方法，Cookie以及HTTP报文等。</p>
+<ol>
+<li>多路复用流</li>
+<li>赋予请求优先级</li>
+<li>压缩HTTP首部</li>
+<li>推送功能</li>
+<li>服务器提示功能</li>
+</ol>
+<h3 id="全双工通信的WebSocket"><a href="#全双工通信的WebSocket" class="headerlink" title="全双工通信的WebSocket"></a>全双工通信的WebSocket</h3><p><code>WebSocket</code>即Web浏览器和Web服务器之间全双工通信标准。</p>
+<p>连接的发起方是客户端，而一旦确立了WS通信连接，无论是服务器还是客户端都可以直接向对方发送报文。</p>
+<h4 id="WS协议主要特点："><a href="#WS协议主要特点：" class="headerlink" title="WS协议主要特点："></a>WS协议主要特点：</h4><ol>
+<li>推送功能</li>
+<li>减少通信量</li>
+</ol>
+<p>为了实现WS通信，客户端第一次请求的时候（一次握手），就采用upgrade头部信息告知服务端要升级协议。服务端返回状态码<code>101 Switching Protocols</code>的响应。确立握手后，通信就采用WebSocket独立的数据帧。</p>
+<h3 id="Web服务器管理文件的WebDAV"><a href="#Web服务器管理文件的WebDAV" class="headerlink" title="Web服务器管理文件的WebDAV"></a>Web服务器管理文件的WebDAV</h3><p>WebDAV是一个可对Web服务器上的内容直接进行文件复制，编辑等操作的分布式文件系统。还具备文件创建者管理，文件加锁，以及对文件内容修改的版本控制功能。</p>
+<h2 id="第十章：构建Web内容的技术"><a href="#第十章：构建Web内容的技术" class="headerlink" title="第十章：构建Web内容的技术"></a>第十章：构建Web内容的技术</h2><h3 id="发布更新信息的RSS-Atom"><a href="#发布更新信息的RSS-Atom" class="headerlink" title="发布更新信息的RSS/Atom"></a>发布更新信息的RSS/Atom</h3><p>都是发布新闻或博客日志等更新信息文档的格式的总称。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>是一种以JavaScript的对象表示法为基础的轻量级数据标记语言。能够处理的数据类型有false/null/true/对象/数组/数字/字符串，共7种类型。</p>
+<h2 id="第十一章：Web攻击技术"><a href="#第十一章：Web攻击技术" class="headerlink" title="第十一章：Web攻击技术"></a>第十一章：Web攻击技术</h2><h3 id="针对Web应用的攻击模式"><a href="#针对Web应用的攻击模式" class="headerlink" title="针对Web应用的攻击模式"></a>针对Web应用的攻击模式</h3><ul>
+<li><p>主动攻击</p>
+<p>主动攻击是指攻击者通过直接访问Web应用，把攻击代码传入的模式。——SQL注入攻击和OS命令注入攻击。</p>
+</li>
+<li><p>被动攻击</p>
+<p>利用圈套策略执行攻击代码，不直接对目标Web应用访问发起攻击。——跨站脚本攻击和跨站点请求伪造。</p>
+</li>
+</ul>
+<h3 id="因输出值转义不完全引发的安全漏洞"><a href="#因输出值转义不完全引发的安全漏洞" class="headerlink" title="因输出值转义不完全引发的安全漏洞"></a>因输出值转义不完全引发的安全漏洞</h3><p><strong>跨站脚本攻击（XSS）</strong>是指通过存在安全漏洞的Web网站注册用户的浏览器内运行非法的HTML标签或JavaScript进行的一种攻击。</p>
 <ul>
-<li><p>应用层：决定了向用户提供应用服务时通信的活动</p>
-<p>FTP协议：文件传输协议</p>
-<p>HTTP协议</p>
-<p>DNS：域名系统</p>
-</li>
-<li><p>传输层：对上层应用层，提供处于网络连接中两台计算机之间的数据传输</p>
-<p>TCP：传输控制协议</p>
-<p>UDP：用户数据报协议</p>
-</li>
-<li><p>网络层：处理网络上流动的数据包，规定了传输路线</p>
-</li>
-<li><p>链路层：用来处理连接网络的硬件部分</p>
-</li>
+<li>利用虚假输入表单骗取用户个人信息。</li>
+<li>窃取用户Cookie值，帮助攻击者发送恶意请求。</li>
+<li>显示伪造的文章或图片。</li>
 </ul>
-<h3 id="IP，TCP和DNS"><a href="#IP，TCP和DNS" class="headerlink" title="IP，TCP和DNS"></a>IP，TCP和DNS</h3><ul>
-<li><p>IP位于网络层，作用是把各种数据包传送给对方，需要满足IP地址（可能多个）和MAC地址（地理位置唯一性）才能确保传送到。IP和MAC是多对一的关系</p>
-</li>
-<li><p>TCP位于传输层，提供可靠的字节流服务（把大块数据分割成以报文段为单位的数据包进行管理和准确可靠的传给对方）</p>
-<p>TCP协议的三次握手策略：发送端首先发送一个带SYN标志的数据包给对方。接收端收到后，回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，代表“握手”结束。若某个阶段中断，会再次以相同的顺序发送相同的数据包。</p>
-</li>
-<li><p>DNS<code>Domain Name System</code>服务是应用层协议，提供域名到IP地址之间的解析服务。</p>
-<p>ARP<code>Address resolution Protocol</code>解析地址协议，根据通信方的IP地址反查对应的MAC地址。</p>
-</li>
-</ul>
-<h3 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h3><p>URI用字符串标识某一互联网资源，而URL表示资源的地址（互联网上所处的位置）。URL是URI的子集。</p>
-<h2 id="第二章：简单的HTTP协议"><a href="#第二章：简单的HTTP协议" class="headerlink" title="第二章：简单的HTTP协议"></a>第二章：简单的HTTP协议</h2><p>请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一端称为服务器端。</p>
-<p>HTTP协议规定：请求从客户端发出，最后服务器端响应请求并返回。</p>
-<h3 id="客户端和服务器端通信"><a href="#客户端和服务器端通信" class="headerlink" title="客户端和服务器端通信"></a>客户端和服务器端通信</h3><ul>
-<li><p>客户端发送请求报文：</p>
-<p>请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和内容实体构成。</p>
-</li>
-<li><p>服务器发送响应报文：</p>
-<p>响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。</p>
-</li>
-</ul>
-<h3 id="HTTP是无状态stateless协议"><a href="#HTTP是无状态stateless协议" class="headerlink" title="HTTP是无状态stateless协议"></a>HTTP是无状态<code>stateless</code>协议</h3><p>HTTP协议自身不对请求和响应之间的通信状态进行保存。所以需要通过设置<code>cookie</code>来验证状态，比如<code>session</code>。为了更快的处理大量事务，确保协议的可伸缩性。如果对服务器本身发起请求，可以用一个<code>*</code>来代替请求URI</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS * HTTP&#x2F;1.1</span><br></pre></td></tr></table></figure>
-
-<h3 id="告知服务器意图的HTTP方法"><a href="#告知服务器意图的HTTP方法" class="headerlink" title="告知服务器意图的HTTP方法"></a>告知服务器意图的HTTP方法</h3><ul>
-<li><p>GET：获取资源</p>
-<p>GET方法用来请求访问已被URI识别的资源。指定的资源经服务器端解析后返回响应内容。</p>
-</li>
-<li><p>POST：传输实体主体</p>
-</li>
-<li><p>PUT：传输文件</p>
-</li>
-<li><p>HEAD：获得报文首部</p>
-<p>HEAD与GET方法一样，只是不返回报文主体部分。</p>
-</li>
-<li><p>DELETE：删除文件</p>
-</li>
-<li><p>OPTIONS：询问支持的方法</p>
-<p>OPTIONS方法用来查询针对请求URI指定的资源支持的方法。</p>
-</li>
-<li><p>TRACE：追踪路径</p>
-</li>
-<li><p>CONNECT：要求用隧道协议连接代理</p>
-</li>
-</ul>
-<h3 id="持节连接节省通信量"><a href="#持节连接节省通信量" class="headerlink" title="持节连接节省通信量"></a>持节连接节省通信量</h3><p>持节连接特点：只要任意一端没有明确提出断开连接，则保持TCP连接状态。</p>
-<p>管线化：不需等待，同时发送多个请求。</p>
-<h3 id="使用Cookie的状态管理"><a href="#使用Cookie的状态管理" class="headerlink" title="使用Cookie的状态管理"></a>使用Cookie的状态管理</h3><p><code>Cookie会根据从服务器端发送的响应报文内的一个叫Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入Cookie值后发送出去。</code></p>
-<p>Cookie是保存在客户端的，Cookie的内容可以是任意文本。但实际使用中并不直接在Cookie中包含信息，只是包含一个ID，配合服务端的session，以该ID为key获取用户信息。</p>
-<h2 id="第三章：HTTP报文内的HTTP信息"><a href="#第三章：HTTP报文内的HTTP信息" class="headerlink" title="第三章：HTTP报文内的HTTP信息"></a>第三章：HTTP报文内的HTTP信息</h2><h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>HTTP报文大致分为报文首部和报文主体两块。两者由空行（CR+LF）来划分，通常不需要有报文主体。</p>
-<h3 id="报文结构"><a href="#报文结构" class="headerlink" title="报文结构"></a>报文结构</h3><ul>
-<li><p>请求报文</p>
-<p>请求行（请求方法，请求URI，HTTP版本）</p>
-<p>请求首部字段</p>
-<p>通用首部字段</p>
-<p>实体首部字段</p>
-<p>其他</p>
-</li>
-<li><p>响应报文</p>
-<p>状态行（状态码，原因短语和HTTP版本）</p>
-<p>响应首部字段</p>
-<p>通用首部字段</p>
-<p>实体首部字段</p>
-<p>其他</p>
-</li>
-</ul>
-<h3 id="编码提升传输速率"><a href="#编码提升传输速率" class="headerlink" title="编码提升传输速率"></a>编码提升传输速率</h3><ul>
-<li>压缩传输的内容编码</li>
-<li>分割发送的分块传输编码</li>
-</ul>
-<h3 id="发送多种数据的多部分对象集合"><a href="#发送多种数据的多部分对象集合" class="headerlink" title="发送多种数据的多部分对象集合"></a>发送多种数据的多部分对象集合</h3><p>HTTP协议采纳多部分对象集合，发送的一份报文主体内可包含多类型实体。通常在图片或文本文件等上传时使用。需要在首部字段加Content-type。</p>
-<h3 id="获取部分内容的范围请求"><a href="#获取部分内容的范围请求" class="headerlink" title="获取部分内容的范围请求"></a>获取部分内容的范围请求</h3><p>情景：恢复从之前下载中断处恢复下载。</p>
-<p>指定下载的实体范围，指定范围发送的请求叫做范围请求。首部字段Range来指定资源的byte范围。如果服务器端无法响应范围请求，则会返回状态码200 OK和完整的实体内容。</p>
-<h3 id="内容协商返回最合适的内容"><a href="#内容协商返回最合适的内容" class="headerlink" title="内容协商返回最合适的内容"></a>内容协商返回最合适的内容</h3><p>内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言，字符集，编码方式等作为判断的基准。</p>
-<p>内容协商技术有三种类型</p>
+<p><strong>对用户Cookie的窃取攻击</strong>。</p>
+<p><strong>SQL注入攻击</strong>是指针对Web应用使用的数据库，通过运行非法的SQL而产生的攻击。</p>
 <ul>
-<li>服务器驱动协商</li>
-<li>客户端驱动协商</li>
-<li>透明协商</li>
+<li>非法查看或篡改数据库内的数据</li>
+<li>规避认证</li>
+<li>执行和数据库服务器业务关联的程序等</li>
 </ul>
+<p><strong>OS命令注入攻击</strong>是指通过Web应用，执行非法的操作系统命令达到攻击的目的。只要能在调用Shell函数的地方就存在被攻击的风险。</p>
+<p><strong>HTTP首部注入攻击</strong>是指攻击者通过在响应首部字段内插入换行，添加任意响应首部或主体的一种攻击，是被动攻击模式。</p>
+<ul>
+<li>设置任何Cookie信息</li>
+<li>重定向至任意URL</li>
+</ul>
+<p><strong>邮件首部注入攻击</strong></p>
+<p><strong>目录遍历攻击</strong></p>
+<p><strong>远程文件包含漏洞</strong></p>
+<h3 id="因设置或设计上的缺陷引发的安全漏洞"><a href="#因设置或设计上的缺陷引发的安全漏洞" class="headerlink" title="因设置或设计上的缺陷引发的安全漏洞"></a>因设置或设计上的缺陷引发的安全漏洞</h3><p><strong>强制浏览</strong></p>
+<p><strong>不正确的错误消息处理</strong></p>
+<p><strong>开放重定向</strong></p>
+<h3 id="因会话管理疏忽引发的安全漏洞"><a href="#因会话管理疏忽引发的安全漏洞" class="headerlink" title="因会话管理疏忽引发的安全漏洞"></a>因会话管理疏忽引发的安全漏洞</h3><p><strong>会话劫持</strong></p>
+<p><strong>会话固定攻击</strong></p>
+<p><strong>跨站点请求伪造</strong></p>
 
             </div>
             <hr/>
@@ -537,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ghostychen.github.io/2020/05/20/20200520-01-1/">https://ghostychen.github.io/2020/05/20/20200520-01-1/</a>
+                    <a href="https://ghostychen.github.io/2020/05/21/20200521-03/">https://ghostychen.github.io/2020/05/21/20200521-03/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -748,9 +730,71 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/21/20200521-03/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="图解http读书笔记3">
+                        
+                        <span class="card-title">图解http读书笔记3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第八章：用户身份的认证用户认证
+密码
+动态令牌
+数字证书
+生物认证
+IC卡等
+
+BASIC认证DIGEST认证SSL客户端认证FormBase认证目前认证多半是基于表单认证，客户端会向服务器上的Web应用程序发送登录信息，按登陆信息的验证结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/http%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    http读书笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/05/21/20200521-02/">
                     <div class="card-image">
@@ -786,9 +830,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -806,62 +850,6 @@
                     
                     <a href="/tags/http/">
                         <span class="chip bg-color">http</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">读书笔记</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/20/20200520-02/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="阮一峰js教程读书笔记2">
-                        
-                        <span class="card-title">阮一峰js教程读书笔记2</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            对象
-定义：对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
-如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。
-对象的每一个键名又称为“属性”
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Js%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    Js读书笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                     <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
